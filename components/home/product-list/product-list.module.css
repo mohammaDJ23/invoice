@@ -1,0 +1,8 @@
+.productListTable {
+  border-collapse: separate;
+  border-spacing: 0 3px;
+}
+
+.productListTable thead {
+  background-color: rgb(49, 179, 70);
+}

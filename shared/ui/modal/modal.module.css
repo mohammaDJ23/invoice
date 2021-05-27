@@ -1,0 +1,29 @@
+.modal {
+  width: 300px;
+  min-height: 70px;
+  bottom: 10px;
+  border-radius: 2px;
+  z-index: 4;
+  box-shadow: 0 0 10px 20px rgba(0, 0, 0, 0.082);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.modal.green {
+  background-color: rgb(49, 179, 70);
+}
+
+.modal.red {
+  background-color: rgb(255, 93, 93);
+}
+
+.modal.show {
+  right: 10px;
+}
+
+.modal.hide {
+  right: -400px;
+}

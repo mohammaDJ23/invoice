@@ -1,0 +1,11 @@
+.clientInvoice p:nth-of-type(1) {
+  color: rgb(49, 179, 70);
+}
+
+.clientInvoice p {
+  margin-bottom: 4px;
+}
+
+.clientInvoice b {
+  margin-right: 25px;
+}

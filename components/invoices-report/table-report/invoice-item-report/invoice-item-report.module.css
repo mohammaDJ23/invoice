@@ -1,0 +1,11 @@
+.invoiceItemReport p {
+  margin: 0;
+}
+
+.invoiceItemReport {
+  transition: background-color 0.3s;
+}
+
+.invoiceItemReport:hover {
+  background-color: rgba(45, 51, 58, 0.568);
+}

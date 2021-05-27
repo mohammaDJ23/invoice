@@ -1,0 +1,15 @@
+.button {
+  background-color: rgb(49, 179, 70);
+  padding: 8px 12px;
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  transition: background-color 0.4s;
+  font-size: 11px;
+}
+
+.button.disabled {
+  background-color: rgba(49, 179, 71, 0.295);
+  color: rgb(170, 170, 170);
+  cursor: not-allowed;
+}

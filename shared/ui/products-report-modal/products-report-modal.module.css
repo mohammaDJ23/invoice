@@ -1,0 +1,31 @@
+.productsReportModal {
+  background-color: rgba(24, 28, 32, 0.658);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  overflow: auto;
+}
+
+.productsReportModal div {
+  background-color: rgb(24, 28, 32);
+  width: 55%;
+  height: 500px;
+  overflow: auto;
+}
+
+.productsReportModal thead {
+  background-color: rgb(49, 179, 70);
+}
+
+.productsReportModal p {
+  margin: 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .productsReportModal div {
+    width: 90%;
+  }
+}

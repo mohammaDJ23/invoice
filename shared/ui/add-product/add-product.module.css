@@ -1,0 +1,9 @@
+.addProduct {
+  width: 350px;
+  background-color: rgba(24, 28, 32, 0.936);
+  box-shadow: -10px 0 100px 50px rgb(0, 0, 0, 0.6);
+  right: 0;
+  top: 0;
+  padding: 20px;
+  z-index: 2;
+}

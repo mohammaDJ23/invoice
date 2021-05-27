@@ -1,0 +1,12 @@
+.companyInvoice {
+  margin: 70px 0;
+}
+
+.companyInvoice div:first-child p:nth-of-type(1),
+.companyInvoice div:last-child h1 {
+  color: rgb(49, 179, 70);
+}
+
+.companyInvoice p {
+  margin-bottom: 4px;
+}

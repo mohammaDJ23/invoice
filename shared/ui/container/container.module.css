@@ -1,0 +1,22 @@
+.container {
+  padding: 0.5rem;
+  max-width: 60%;
+  margin: auto;
+  background-color: rgb(24, 28, 32);
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+}
+
+@media screen and (max-width: 1600px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    max-width: 98%;
+  }
+}

@@ -1,0 +1,11 @@
+.tableReport {
+  margin: 70px 0;
+}
+
+.tableReport thead {
+  background-color: rgb(49, 179, 70);
+}
+
+.tableReport thead td {
+  background-color: unset;
+}

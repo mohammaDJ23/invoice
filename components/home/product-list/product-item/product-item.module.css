@@ -1,0 +1,11 @@
+.productItem {
+  transition: background-color 0.3s;
+}
+
+.productItem:hover {
+  background-color: rgba(45, 51, 58, 0.568);
+}
+
+.productItem p {
+  margin-bottom: 0;
+}
