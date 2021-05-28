@@ -11,6 +11,11 @@ body {
   background-color: rgb(24, 28, 32);
 }
 
+#__next h1[style],
+#__next h2[style] {
+  color: black;
+}
+
 .hover {
   cursor: pointer;
 }
