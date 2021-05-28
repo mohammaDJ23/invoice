@@ -39,7 +39,7 @@ export const createInvoiceOperation = async (
   const session = await db.startSession();
 
   const user = await User.findById({
-    _id: mongoose.Types.ObjectId(userSession.user.id)
+    _id: mongoose.Types.ObjectId(userSession.user.id! as string)
   });
 
   if (!user) {
