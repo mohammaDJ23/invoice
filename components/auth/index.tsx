@@ -39,17 +39,17 @@ const Auth: React.FC = () => {
         password: inputs.password.value
       });
 
-      setIsLoading(false);
-
       if (result.error) {
         errorHandler(result.error);
         modalHandler(true);
-        router.push("/auth");
+        await router.push("/auth");
       } else {
         errorHandler("");
         modalHandler(false);
-        router.replace(result.url);
+        await router.replace(result.url);
       }
+
+      setIsLoading(false);
 
       return;
     }
