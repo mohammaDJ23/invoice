@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import { getDatabase } from "../../databasee-connection";
 import Invoice from "../../models/invoice";
 
-export const getInvoiceNumber = async (id: string) => {
+export const getInvoiceNumber = async (id: any) => {
   const db = await getDatabase();
 
   const [count] = await Invoice.aggregate([

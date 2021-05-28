@@ -1,5 +1,4 @@
 import { NextApiRequest } from "next";
-import { Session } from "next-auth";
 import mongoose from "mongoose";
 
 import { getDatabase } from "../../databasee-connection";
@@ -12,7 +11,7 @@ import { getInvoiceNumber } from "../invoice-number";
 
 export const createInvoiceOperation = async (
   req: NextApiRequest,
-  userSession: Session
+  userSession: any
 ) => {
   const {
     products,
@@ -40,7 +39,7 @@ export const createInvoiceOperation = async (
   const session = await db.startSession();
 
   const user = await User.findById({
-    _id: mongoose.Types.ObjectId(userSession.user.id! as string)
+    _id: mongoose.Types.ObjectId(userSession.user.id)
   });
 
   if (!user) {

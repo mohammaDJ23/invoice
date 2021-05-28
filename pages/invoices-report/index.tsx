@@ -77,7 +77,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
       };
     }
 
-    const { invoicesReport } = await invoicesReportOperation(session.user.id);
+    const { invoicesReport } = await invoicesReportOperation(session.user.id as any);
 
     return {
       props: {
