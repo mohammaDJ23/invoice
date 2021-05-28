@@ -25,7 +25,7 @@ const Modal: React.FC<Invoice.Invoice.ModalOptions> = ({ action, content }) => {
     <div
       className={[
         classes.modal,
-        "position-fixed",
+        "position-fixed p-3",
         action === "success" ? classes.green : classes.red,
         isShow ? classes.show : classes.hide
       ].join(" ")}
