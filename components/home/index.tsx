@@ -18,6 +18,7 @@ const Home: React.FC<Invoice.Invoice.HomeComponentsOptions> = ({
   total,
   subTotal,
   tax,
+  invoiceNumber,
   showAddProductHandler,
   addProductHandler,
   removeProductHandler,
@@ -25,7 +26,7 @@ const Home: React.FC<Invoice.Invoice.HomeComponentsOptions> = ({
 }) => {
   const { loading, fetchInvoice, data } = fetchData();
   const { error } = useContext(ErrorContext);
-  const companyInvoice = { ...invoiceFrom, ...invoice };
+  const companyInvoice = { ...invoiceFrom, ...invoice, invoiceNumber };
 
   return (
     <>

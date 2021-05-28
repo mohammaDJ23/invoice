@@ -7,11 +7,13 @@ import CompanyInvoice from "../lib/invoice-from";
 import BillDate from "../lib/invoice";
 import { useProductManagement } from "../shared/hooks/use-product-management";
 import Container from "../shared/ui/container";
-import { useContext, useEffect } from "react";
-import { ModalContext } from "../shared/context/modal";
-import { useRouter } from "next/dist/client/router";
+import { getInvoiceNumber } from "./api/lib/api/invoice-number";
 
-const Home: React.FC<Invoice.Invoice.HomeOptions> = ({ invoiceFrom, invoice }) => {
+const Home: React.FC<Invoice.Invoice.HomeOptions> = ({
+  invoiceFrom,
+  invoice,
+  invoiceNumber
+}) => {
   const {
     products,
     subTotal,
@@ -45,6 +47,7 @@ const Home: React.FC<Invoice.Invoice.HomeOptions> = ({ invoiceFrom, invoice }) =
         addProductHandler={addProductHandler}
         removeProductHandler={removeProductHandler}
         removerAllProductshandler={removeAllProductsHandler}
+        invoiceNumber={invoiceNumber}
       />
     </Container>
   );
@@ -63,6 +66,8 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
       };
     }
 
+    const { invoiceNumber } = await getInvoiceNumber(session.user.id);
+
     return {
       props: {
         invoiceFrom: JSON.stringify(
@@ -70,9 +75,10 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
         ),
 
         invoice: {
-          number: "1",
           date: BillDate.build()
-        }
+        },
+
+        invoiceNumber
       }
     };
   } catch (error) {

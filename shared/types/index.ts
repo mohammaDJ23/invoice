@@ -148,7 +148,6 @@ export namespace Invoice {
     | DeleteAllProductsOptions;
 
   interface InvoiceOptions {
-    number: string;
     date: string;
   }
 
@@ -200,6 +199,7 @@ export namespace Invoice {
   export interface HomeOptions {
     invoiceFrom: InvoiceFromOptions;
     invoice: InvoiceOptions;
+    invoiceNumber: number;
   }
 
   export interface HomeComponentsOptions
@@ -211,9 +211,9 @@ export namespace Invoice {
 
   export interface AddProductOptions extends ShowAddProductMenuOptions {}
 
-  export interface CompanyInvoiceOptions
-    extends InvoiceFromOptions,
-      InvoiceOptions {}
+  export interface CompanyInvoiceOptions extends InvoiceFromOptions, InvoiceOptions {
+    invoiceNumber: number;
+  }
 
   export interface ButtonOptions {
     label: string;
