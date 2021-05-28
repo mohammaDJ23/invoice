@@ -66,7 +66,7 @@ const InvoicesReport: React.FC<Invoice.Invoice.InvoicesReportOpetions> = ({
 
 export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   try {
-    const session = await getSession({ req });
+    const session = (await getSession({ req })) as any;
 
     if (!session) {
       return {
@@ -77,7 +77,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
       };
     }
 
-    const { invoicesReport } = await invoicesReportOperation(session.user.id as any);
+    const { invoicesReport } = await invoicesReportOperation(session.user.id);
 
     return {
       props: {

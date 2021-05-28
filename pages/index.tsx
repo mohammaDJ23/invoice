@@ -55,7 +55,7 @@ const Home: React.FC<Invoice.Invoice.HomeOptions> = ({
 
 export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   try {
-    const session = await getSession({ req });
+    const session = (await getSession({ req })) as any;
 
     if (!session) {
       return {
@@ -66,7 +66,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
       };
     }
 
-    const { invoiceNumber } = await getInvoiceNumber(session.user.id as any);
+    const { invoiceNumber } = await getInvoiceNumber(session.user.id);
 
     return {
       props: {

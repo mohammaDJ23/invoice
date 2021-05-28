@@ -11,7 +11,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       throw new HttpError("Request failed", 500);
     }
 
-    const userSession = await getSession({ req });
+    const userSession = (await getSession({ req })) as any;
 
     if (!userSession) {
       throw new HttpError("Not authenticated.", 401);
@@ -27,10 +27,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       throw new HttpError("Invalid input", 422);
     }
 
-    const { name, invoiceNumber } = await createInvoiceOperation(
-      req,
-      userSession as any
-    );
+    const { name, invoiceNumber } = await createInvoiceOperation(req, userSession);
 
     res
       .status(201)
