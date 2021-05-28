@@ -18,5 +18,5 @@ export const getInvoiceNumber = async (id: string) => {
     }
   ]);
 
-  return { invoiceNumber: count.invoiceNumber + 1 || 0 };
+  return { invoiceNumber: count?.invoiceNumber + 1 || 0 };
 };

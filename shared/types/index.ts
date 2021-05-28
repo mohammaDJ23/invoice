@@ -213,6 +213,7 @@ export namespace Invoice {
 
   export interface CompanyInvoiceOptions extends InvoiceFromOptions, InvoiceOptions {
     invoiceNumber: number;
+    invoiceNum: number;
   }
 
   export interface ButtonOptions {

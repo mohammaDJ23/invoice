@@ -24,9 +24,9 @@ const Home: React.FC<Invoice.Invoice.HomeComponentsOptions> = ({
   removeProductHandler,
   removerAllProductshandler
 }) => {
-  const { loading, fetchInvoice, data } = fetchData();
+  const { loading, fetchInvoice, data, invoiceNumber: invoiceNum } = fetchData();
   const { error } = useContext(ErrorContext);
-  const companyInvoice = { ...invoiceFrom, ...invoice, invoiceNumber };
+  const companyInvoice = { ...invoiceFrom, ...invoice, invoiceNumber, invoiceNum };
 
   return (
     <>

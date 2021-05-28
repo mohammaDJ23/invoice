@@ -27,9 +27,11 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       throw new HttpError("Invalid input", 422);
     }
 
-    const { name } = await createInvoiceOperation(req, userSession);
+    const { name, invoiceNumber } = await createInvoiceOperation(req, userSession);
 
-    res.status(201).send({ data: `${name}'s invoice was registered` });
+    res
+      .status(201)
+      .send({ data: `${name}'s invoice was registered`, invoiceNumber });
   } catch (error) {
     res.status(error.code || 500).send({ error: error.message });
   }

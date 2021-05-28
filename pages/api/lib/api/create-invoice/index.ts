@@ -8,6 +8,7 @@ import Invoice from "../../models/invoice";
 import Product from "../../models/product";
 import User from "../../models/user";
 import { HttpError } from "../../models/error";
+import { getInvoiceNumber } from "../invoice-number";
 
 export const createInvoiceOperation = async (
   req: NextApiRequest,
@@ -62,5 +63,7 @@ export const createInvoiceOperation = async (
 
   session.endSession();
 
-  return { name };
+  const { invoiceNumber } = await getInvoiceNumber(userSession.user.id);
+
+  return { name, invoiceNumber };
 };

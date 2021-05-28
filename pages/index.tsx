@@ -66,7 +66,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
       };
     }
 
-    const { invoiceNumber } = await getInvoiceNumber(session.user.id as string);
+    const { invoiceNumber } = await getInvoiceNumber(session.user.id);
 
     return {
       props: {

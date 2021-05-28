@@ -5,9 +5,10 @@ import { ModalContext } from "../../context/modal";
 import { ErrorContext } from "../../context/error";
 
 export const fetchData = () => {
-  const [{ loading, data }, setValue] = useState({
+  const [{ loading, data, invoiceNumber }, setValue] = useState({
     loading: false,
-    data: ""
+    data: "",
+    invoiceNumber: 0
   });
 
   const { modalHandler } = useContext(ModalContext);
@@ -42,7 +43,8 @@ export const fetchData = () => {
         setValue(prevState => ({
           ...prevState,
           loading: false,
-          data: responseData.data
+          data: responseData.data,
+          invoiceNumber: responseData.invoiceNumber
         }));
 
         modalHandler(true);
@@ -75,5 +77,5 @@ export const fetchData = () => {
     }
   }, [error]);
 
-  return { fetchInvoice, loading, data };
+  return { fetchInvoice, loading, data, invoiceNumber };
 };

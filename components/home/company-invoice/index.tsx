@@ -9,7 +9,8 @@ const CompanyInvoice: React.FC<Invoice.Invoice.CompanyInvoiceOptions> = ({
   phone,
   email,
   date,
-  invoiceNumber
+  invoiceNumber,
+  invoiceNum
 }) => {
   const router = useRouter();
 
@@ -46,7 +47,7 @@ const CompanyInvoice: React.FC<Invoice.Invoice.CompanyInvoiceOptions> = ({
         <p className="d-flex align-items-center justify-content-between">
           <b>Invoice Number:</b>
 
-          <span># {invoiceNumber}</span>
+          <span># {invoiceNum || invoiceNumber}</span>
         </p>
 
         <p className="d-flex align-items-center justify-content-between">
