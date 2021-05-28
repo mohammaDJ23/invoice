@@ -28,8 +28,8 @@ export default NextAuth({
       return Promise.resolve(token);
     },
 
-    session: async (session, user) => {
-      session.userId = user.id as string;
+    session: async (session: any, user) => {
+      session.user.id = user.id as string;
       return Promise.resolve(session);
     }
   }
